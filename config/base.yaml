@@ -1,0 +1,53 @@
+# Base Configuration for API Test Agent
+
+environment: dev
+
+api:
+  base_url: http://localhost:8000
+  timeout: 30
+  verify_ssl: true
+  retry_times: 3
+  retry_interval: 1
+
+auth:
+  type: custom
+  script_path: ./libs/auth_handler.py
+
+logging:
+  level: INFO
+  file: logs/test.log
+  console: true
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+data:
+  storage: yaml
+  path: ./data/test_data.yaml
+  auto_cleanup: true
+  
+reporting:
+  type: allure
+  output_dir: ./reports/
+  allure_results_dir: ./reports/allure-results/
+  
+robotframework:
+  log_level: INFO
+  doc_format: HTML
+  variable_files:
+    - config/variables.robot
+
+agent:
+  llm_type: openai
+  llm_config:
+    api_key: ${LLM_API_KEY}
+    model: gpt-4
+    temperature: 0.7
+  
+  generation:
+    include_normal_cases: true
+    include_exception_cases: true
+    include_boundary_cases: true
+    max_cases_per_api: 10
+  
+  review:
+    require_approval: true
+    auto_approve_confidence_threshold: 0.9

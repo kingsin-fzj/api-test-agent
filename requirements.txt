@@ -1,0 +1,27 @@
+# Core Testing Framework
+robotframework==7.0.1
+robot-requests==0.9.7
+
+# HTTP Requests
+requests==2.31.0
+
+# Reporting
+allure-robotframework==2.13.2
+
+# Data Management
+PyYAML==6.0.1
+python-dotenv==1.0.0
+
+# Utilities
+python-dateutil==2.8.2
+loguru==0.7.2
+
+# API Specification
+openapi-spec-validator==0.6.0
+
+# Code Generation
+jinja2==3.1.2
+
+# Testing utilities
+pytest==7.4.3
+pytest-cov==4.1.0

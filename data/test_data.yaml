@@ -1,0 +1,22 @@
+# Test Data Configuration
+
+auth:
+  username: test_user
+  password: test_password
+  email: test@example.com
+  sign: "your_sign_here"
+
+users:
+  - username: user1
+    email: user1@example.com
+  - username: user2
+    email: user2@example.com
+
+api_responses:
+  success_code: 2000
+  error_code: 5000
+
+error_messages:
+  user_not_found: "无此用户"
+  invalid_params: "参数错误"
+  unauthorized: "未授权"

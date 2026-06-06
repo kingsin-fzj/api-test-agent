@@ -1,0 +1,28 @@
+# Test Environment Configuration
+
+environment: test
+
+api:
+  base_url: https://test-api.example.com
+  timeout: 30
+  verify_ssl: true
+  retry_times: 3
+
+auth:
+  type: custom
+  script_path: ./libs/auth_handler.py
+
+logging:
+  level: INFO
+  file: logs/test.log
+  console: true
+
+data:
+  storage: yaml
+  path: ./data/test_data.yaml
+  auto_cleanup: true
+
+reporting:
+  type: allure
+  output_dir: ./reports/
+  allure_results_dir: ./reports/allure-results/
